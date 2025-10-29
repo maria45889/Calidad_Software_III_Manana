@@ -1,0 +1,18 @@
+const {puedeConducir} = require('./puedeConducir');
+
+describe('puedeConducir', () => {
+    test('Happy path: 20 puede conducir', () => {
+        const respuesta = puedeConducir(20);
+        expect(respuesta).toBe('Si');
+    });
+
+    test('Happy path: 16 No puedo conducir', () => {
+        const respuesta = puedeConducir(16);
+        expect(respuesta).toBe('No');
+    });
+    test('Sad path: Edad invalida', () => {
+    expect(() =>puedeConducir(-1)).toThrow('Edad invalida');
+    expect(() =>puedeConducir('19')).toThrow('Edad invalida');
+    });
+
+});
