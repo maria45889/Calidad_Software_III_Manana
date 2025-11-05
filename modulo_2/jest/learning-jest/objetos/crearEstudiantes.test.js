@@ -1,8 +1,8 @@
 const {crearEstudiantes} = require('./crearEstudiantes');
 describe('Crear Estudiantes',()=>{
     test('Happy Path:', () =>{
-        expect(crearEstudiantes(Majo,19)).toBe({
-            nombre:Majo,
+        expect(crearEstudiantes('Majo',19)).toEqual({
+            nombre:'Majo',
             edad: 19,
         });
     });
