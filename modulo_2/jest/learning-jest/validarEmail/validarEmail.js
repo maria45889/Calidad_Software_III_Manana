@@ -4,5 +4,17 @@ function validarEmail(email) {
     const regex = /^[\\w.-]+@[\\w.-]+\\.[a-z]{2,}$/i;
     return regex.test(email);
   }
+
+  function encontrarPalabra(texto, patron) {
+    if(typeof texto !== 'string' || typeof patron !== 'string') {
+      throw new TypeError('Texto y patron deben ser string');
+    }
+    return new RegExp(patron, 'i').test(texto);
+  }
   
-module.exports={validarEmail}
+   function limpiarTexto(texto) {
+    if (typeof texto !== 'string')
+      throw new TypeError('texto deber ser string');
+    return texto.trim().replace(/\\s+/g, '');
+   }
+module.exports={validarEmail,encontrarPalabra,limpiarTexto};
